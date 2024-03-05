@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/encrypt.css' %}">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+    <title>Decrypt Data</title>
+</head>
+<body>
+<div class="flex"> 
+    <dotlottie-player src="https://lottie.host/8dbc426b-5efb-4bb1-9dbb-491b74618631/n8tu7kr0IE.json" background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></dotlottie-player>
+    <div class="container">
+        <div class="heading">Decrypt text</div>
+        <form class="form" id="decryptionForm" method="POST" action="{% url 'decrypt_view' %}">
+            {% csrf_token %}
+          <input placeholder="Plain-text" id="plainText" name="encrypted_text" type="text"class="input" required=""/>
+          <input placeholder="Key" id="key" name="key" type="password" class="input" required=""/>
+          <input value="Decrypt" type="submit" class="login-button" />
+        </form>
+      </div>
+</div>
+    <script src="{% static 'js/decrypt.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/encrypt.css' %}">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+    <title>Encrypt Data</title>
+</head>
+<body>
+<div class="flex">
+    <dotlottie-player src="https://lottie.host/2115de0c-a52c-4228-9ab4-7ce7fa0c1832/oF0SNKFGcA.json" background="transparent" speed="1" style="width: 500px; height: 400px; margin-top: 50px;" loop autoplay ></dotlottie-player>
+    <div class="container">
+        <div class="heading">Encrypt text</div>
+        <form class="form" id="encryptionForm" method="POST" action="{% url 'encrypt_view' %}">
+            {% csrf_token %}
+          <input placeholder="Plain-text" id="plainText" name="plain_text" type="text"class="input" required=""/>
+          <input placeholder="Key" id="key" name="key" type="password" class="input" required=""/>
+          <input value="Encrypt" type="submit" class="login-button" />
+        </form>
+      </div>
+</div>
+    <script src="{% static 'js/encrypt.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+</body>
+</html>
