@@ -6,7 +6,6 @@ encryptionForm.addEventListener("submit", function(e) {
     e.preventDefault();
   
     const key = keyInput.value;
-    keyInput.type = "password";
   
     if (key.length !== 32) { 
         alertify.set('notifier', 'position', 'top-left'); 

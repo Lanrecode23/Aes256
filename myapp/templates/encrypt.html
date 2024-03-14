@@ -19,13 +19,13 @@
 </head>
 <body>
 <div class="flex">
-    <dotlottie-player src="https://lottie.host/2115de0c-a52c-4228-9ab4-7ce7fa0c1832/oF0SNKFGcA.json" background="transparent" speed="1" style="width: 500px; height: 400px; margin-top: 50px;" loop autoplay ></dotlottie-player>
+    <dotlottie-player src="https://lottie.host/2115de0c-a52c-4228-9ab4-7ce7fa0c1832/oF0SNKFGcA.json" background="transparent" speed="1" style="width: 480px; height: 380px; margin-top: 50px;" loop autoplay ></dotlottie-player>
     <div class="container">
         <div class="heading">Encrypt text</div>
         <form class="form" id="encryptionForm" method="POST" action="{% url 'encrypt_view' %}">
             {% csrf_token %}
           <input placeholder="Plain-text" id="plainText" name="plain_text" type="text"class="input" required=""/>
-          <input placeholder="key" id="key" name="key" type="text" class="input" required=""/>
+          <input placeholder="key" id="key" name="key" type="text" onfocus="(this.type='password')" class="input" required=""/>
           <input value="Encrypt" type="submit" class="login-button" />
         </form>
       </div>
