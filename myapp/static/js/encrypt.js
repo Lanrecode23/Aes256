@@ -1,5 +1,5 @@
 const encryptionForm = document.getElementById("encryptionForm");
-const keyInput = document.getElementById("key");
+const keyInput = document.getElementById('key');
 
 
 encryptionForm.addEventListener("submit", function(e) {
