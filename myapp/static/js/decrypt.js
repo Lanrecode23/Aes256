@@ -1,8 +1,10 @@
 const decryptionForm = document.getElementById("decryptionForm")
+const keyInput = document.getElementById('key')
 
 decryptionForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
+    keyInput.type = "password"; 
     const formData = new FormData(this);
 
    // Send a POST request to the encrypt_view endpoint

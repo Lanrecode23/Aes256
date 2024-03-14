@@ -25,7 +25,7 @@
         <form class="form" id="encryptionForm" method="POST" action="{% url 'encrypt_view' %}">
             {% csrf_token %}
           <input placeholder="Plain-text" id="plainText" name="plain_text" type="text"class="input" required=""/>
-          <input placeholder="key" id="key" name="key" type="password" class="input" required=""/>
+          <input placeholder="key" id="key" name="key" type="text" class="input" required=""/>
           <input value="Encrypt" type="submit" class="login-button" />
         </form>
       </div>
