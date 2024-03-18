@@ -1,11 +1,10 @@
-from django.shortcuts import render, redirect,HttpResponse
+from django.shortcuts import render
 from django.contrib.auth.hashers import make_password  
 from .models import UserProfile, EncryptionKey
 from django.http import JsonResponse
 from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives import hashes, padding
+from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from django.http import HttpResponseNotAllowed
 import binascii
 
 def login(request):
