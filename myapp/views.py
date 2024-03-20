@@ -53,7 +53,7 @@ def encrypt_view(request):
             # Encrypt the plain text using AES-256 with the provided key
             encrypted_text = encrypt_with_aes256(plain_text, key_bytes)
 
-            # Save the encrypted text and key to the db
+            # Save the encrypted and the key to the db
             EncryptionKey.objects.create(
             encrypted_text=encrypted_text,
             encryption_key=key,
