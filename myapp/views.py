@@ -11,7 +11,6 @@ def login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         user_password = request.POST.get('password')
-        
         # Hash the password before saving it
         hashed_password = make_password(user_password)
         UserProfile.objects.create(email=email, password=hashed_password)
