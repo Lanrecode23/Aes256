@@ -7,6 +7,12 @@ from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 import binascii
 
+
+
+def index(request):
+    return render(request, 'index.html')
+
+    
 def login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -34,8 +40,6 @@ def encrypt_with_aes256(plain_text, key):
     hex_cipher_text = binascii.hexlify(cipher_text).decode()
 
     return hex_cipher_text
-
-
 
 def encrypt_view(request):
     if request.method == 'POST':
