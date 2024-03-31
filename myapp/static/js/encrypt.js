@@ -8,7 +8,7 @@ encryptionForm.addEventListener("submit", function(e) {
     const key = keyInput.value;
   
     if (key.length !== 32) { 
-        alertify.set('notifier', 'position', 'top-left'); 
+        alertify.set('notifier', 'position', 'top-right'); 
         alertify.error('Key must be exactly 32 characters long.');
         return;
     }

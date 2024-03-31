@@ -32,13 +32,14 @@
     <main class="main" id="top">
       <div class="content">
         <nav class="navbar navbar-expand-md fixed-top" id="navbar" data-navbar-soft-on-scroll="data-navbar-soft-on-scroll">
-          <div class="container-fluid px-0"><a href="/"><img class="navbar-brand w-75 d-md-none" src="{% static 'img/logos/logo.svg' %}" alt="logo" /></a><a class="navbar-brand enlogo fw-bold d-none d-md-block" href="/">〽️Encrypt.Genius</a><a class="btn btn-primary btn-sm ms-md-x1 mt-lg-0 order-md-1 ms-auto" href="#">Perform Encryption </a><button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="container-fluid px-0"><a href="/"><img class="navbar-brand w-75 d-md-none" src="{% static 'img/logos/logo.svg' %}" alt="logo" /></a><a class="navbar-brand enlogo fw-bold d-none d-md-block" href="/">〽️Encrypt.Genius</a><a class="btn btn-primary btn-sm ms-md-x1 mt-lg-0 order-md-1 ms-auto" href="{% url 'encrypt_view' %}">Perform Encryption </a><button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-md-end" id="navbar-content" data-navbar-collapse="data-navbar-collapse">
               <ul class="navbar-nav gap-md-2 gap-lg-3 pt-x1 pb-1 pt-md-0 pb-md-0" data-navbar-nav="data-navbar-nav">
                 <li class="nav-item"> <a class="nav-link lh-xl" href="/">Home</a></li>
-                <li class="nav-item"> <a class="nav-link lh-xl" href="#about">About</a></li>
-                <li class="nav-item"> <a class="nav-link lh-xl" href="#encrypt">Encryption</a></li>
-                <li class="nav-item"> <a class="nav-link lh-xl" href="#pricing">Decryption</a></li>
+                <li class="nav-item"><a class="nav-link lh-xl" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link lh-xl" href="#encryption">Encryption</a></li>
+                <li class="nav-item"><a class="nav-link lh-xl" href="#decryption">Decryption</a></li>
+
               </ul>
             </div>
           </div>
@@ -49,10 +50,10 @@
               <div class="container">
                 <div class="row gy-4 gy-md-8 pt-2 pt-lg-0">
                   <div class="col-lg-6 text-center text-lg-start">
-                    <h1 class="fs-4 fs-lg-3 text-white sim fw-bold mb-2 mb-lg-x1 lh-base mt-3 mt-lg-0"> Get to encrypt <span class="text-nowrap"> your text</span></h1>
-                    <p class="fs-8 text-white small mb-3 mb-lg-4 lh-lg">With EncryptGenius, you get to know how the Advanced Encryption Standard works and see its practical aspects</p>
+                    <h1 class="fs-4 fs-lg-3 text-white sim fw-bold mb-2 mb-lg-x1 lh-base mt-3 mt-lg-0" style="margin-top: -100px;"> Get to encrypt <span class="text-nowrap"> your text</span></h1>
+                    <p class="fs-8 fs-lg-9 About-aes text-white small mb-3 mb-lg-4 lh-lg">With EncryptGenius, you get to know how the Advanced Encryption Standard works and see its practical aspects</p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                      <a class="btn btn-primary btn-lg lh-xl mb-4 mb-md-5 mb-lg-7" href="">Try it out!</a>
+                      <a class="btn btn-primary btn-lg lh-xl mb-4 mb-md-5 mb-lg-7" href="{% url 'encrypt_view' %}">Try it out!</a>
                     </div>
                     <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 position-relative z-2">
                       <a class="border-0 p-0 bg-transparent cursor-pointer rounded-1" href="#!"></a>
@@ -81,8 +82,8 @@
               <div class="col-12 col-lg-6 col-xl-5">
                 <div class="row justify-content-center justify-content-lg-start">
                   <div class="col-sm-10 col-md-8 col-lg-12">
-                    <h2 class="fs-8 fs-lg-5 fw-bold mb-2 text-center mt-5 text-lg-start About-aes">About AES-256 Encryption and Decryption.</h2>
-                    <p class="fs-8 mb-4 mb-lg-5 lh-lg text-center text-lg-start fw-normal">Welcome to Encrypt.Genius, your guide to understanding and harnessing the power of AES-256 encryption to encrypt and decrypt plain-text! AES-256, also known as the Advanced Encryption Standard with a key length of 256 bits, is a symmetric encryption algorithm widely recognized for its robust security features and efficiency in securing sensitive data.</p>
+                    <h2 class="fs-8 fs-lg-5 fw-bold mb-2 text-center mt-0 text-lg-start About-aes">About AES-256 Encryption and Decryption.</h2>
+                    <p class="fs-8 mb-4 mb-lg-5 fs-lg-9 lh-lg text-center text-lg-start dancing fw-normal">Welcome to Encrypt.Genius, your guide to understanding and harnessing the power of AES-256 encryption to encrypt and decrypt plain-text! AES-256, also known as the Advanced Encryption Standard with a key length of 256 bits, is a symmetric encryption algorithm widely recognized for its robust security features and efficiency in securing sensitive data.</p>
                   </div>
                   <div class="col-12">
                     <div class="mb-x1 mb-lg-3">
@@ -94,24 +95,28 @@
               </div>
             </div>
           </section>
-          <section class="container mb-8 mb-lg-13" id="#encrypt">
+          <section class="container mb-8 mb-lg-13" id="decryption">
             <div class="row align-items-center">
               <div class="col-12 col-lg-6 col-xl-5 order-lg-1"><img class="img-fluid" src="{% static 'img/Hero/Collaborator.webp' %}" alt="" /></div>
               <div class="col-12 col-lg-6 col-xl-7">
                 <div class="row justify-content-center justify-content-lg-start">
                   <div class="col-sm-10 col-md-8 col-lg-11">
-                    <h2 class="fs-4 fs-lg-3 fw-bold mb-2 text-center text-lg-start"> Organize remote team fast & easily.</h2>
-                    <p class="fs-8 mb-4 mb-lg-5 lh-lg text-center text-lg-start fw-normal">Organizing and managing your remote teams has never been this easy!</p>
+                    <h2 class="fs-4 fs-lg-6 fw-bold mb-2 text-center text-lg-start About-aes">Decryption with Aes256</h2>
+                    <p class="b-0 lh-xl"Decryption with AES-256>
+                    Decryption plays a vital role in securely accessing and retrieving data that has been encrypted using strong cryptographic algorithms like AES-256. In this section, we delve into the process of decrypting data encrypted with AES-256, highlighting its importance and underlying principles.
+
+                    Understanding AES-256 Decryption:
+                    AES-256, a variant of the Advanced Encryption Standard (AES), employs a 256-bit encryption key to protect sensitive information. Decrypting data encrypted with AES-256 involves reversing the encryption process to recover the original plaintext. This decryption process requires the correct decryption key, ensuring that only authorized parties can access the decrypted data.
+
+                    Decrypting Encrypted Data:
+                    To decrypt data encrypted with AES-256:
+
+                    Obtain the encrypted data and the corresponding decryption key.
+                    Utilize the AES-256 decryption algorithm to transform the ciphertext back into plaintext.
+                    Validate the integrity of the decrypted data and ensure its accuracy.
+                    Safeguard the decryption key to prevent unauthorized access and maintain data confidentiality.</p>
                   </div>
                   <div class="col-12">
-                    <div class="mb-x1 mb-lg-3">
-                      <h5 class="fs-8 fw-bold lh-lg mb-1">Create Unlimited Teams </h5>
-                      <p class="b-0 lh-xl">Create unlimited teams and boost productivity with efficient collaboration.</p>
-                    </div>
-                    <div>
-                      <h5 class="fs-8 fw-bold lh-lg mb-1"> Hasslefree Chat with Everyone</h5>
-                      <p class="lh-xl mb-0">With unique and simple UIs, keep yourself connected across all the teams.</p>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -163,7 +168,7 @@
             </div>
           </section>
           
-          <section class="bg-300" id="encrypt">
+          <section class="bg-300" id="encryption">
             <div class="container py-8 py-lg-10">
               <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-7">
@@ -249,7 +254,6 @@
     <script src="{% static 'countup/countUp.umd.js' %}"></script>
     <script src="{% static 'swiper/swiper-bundle.min.js' %}"></script>
     <script src="{% static 'lodash/lodash.min.js' %}"></script>
-
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="{% static 'js/theme.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
