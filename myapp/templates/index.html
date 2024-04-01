@@ -18,6 +18,7 @@
 
     <!-- ===============================================--><!--    Stylesheets--><!-- ===============================================-->
     <link rel="stylesheet" href="{% static 'swiper/swiper-bundle.min.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,12 +78,12 @@
           </section>
           <section class="container mb-8 mt-5  mb-lg-13" id="about">
             <div class="row align-items-center">
-              <div class="col-12 col-lg-6 col-xl-7"><img class="img-fluid" src="https://miro.medium.com/v2/resize:fit:1080/1*gnbFp94Dwa4Kas_CbVLqaQ.png" alt="" /></div>
+              <div class="col-12 col-lg-6 col-xl-7" ><img class="img-fluid" src="https://miro.medium.com/v2/resize:fit:1080/1*gnbFp94Dwa4Kas_CbVLqaQ.png" alt="" /></div>
               <div class="col-12 col-lg-6 col-xl-5">
                 <div class="row justify-content-center justify-content-lg-start">
                   <div class="col-sm-10 col-md-8 col-lg-12">
-                    <h2 class="fs-8 fs-lg-5 fw-bold mb-2 text-center mt-0 text-lg-start About-aes">About AES-256 Encryption and Decryption.</h2>
-                    <p class="fs-8 mb-4 mb-lg-5 fs-lg-9 lh-lg text-center text-lg-start dancing fw-normal">Welcome to Encrypt.Genius, your guide to understanding and harnessing the power of AES-256 encryption to encrypt and decrypt plain-text! AES-256, also known as the Advanced Encryption Standard with a key length of 256 bits, is a symmetric encryption algorithm widely recognized for its robust security features and efficiency in securing sensitive data.</p>
+                    <h2 class="fs-8 fs-lg-5 fw-bold mb-2 text-center mt-0 text-lg-start About-aes" >About AES-256 Encryption and Decryption.</h2>
+                    <p class="fs-8 mb-4 mb-lg-5 fs-lg-9 lh-lg text-center text-lg-start dancing fw-normal" >Welcome to Encrypt.Genius, your guide to understanding and harnessing the power of AES-256 encryption to encrypt and decrypt plain-text! AES-256, also known as the Advanced Encryption Standard with a key length of 256 bits, is a symmetric encryption algorithm widely recognized for its robust security features and efficiency in securing sensitive data.</p>
                   </div>
                   <div class="col-12">
                     <div class="mb-x1 mb-lg-3">
@@ -96,7 +97,9 @@
           </section>
           <section class="container mb-8 mb-lg-13" id="decryption">
             <div class="row align-items-center">
-              <div class="col-12 col-lg-6 col-xl-5 order-lg-1"><img class="img-fluid" src="{% static 'img/Hero/Collaborator.webp' %}" alt="" /></div>
+              <div class="col-12 col-lg-6 col-xl-5 order-lg-1"><img class="img-fluid" data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-offset="0" src="{% static 'img/Hero/Collaborator.webp' %}" alt="" /></div>
               <div class="col-12 col-lg-6 col-xl-7">
                 <div class="row justify-content-center justify-content-lg-start">
                   <div class="col-sm-10 col-md-8 col-lg-11">
@@ -257,6 +260,13 @@
     <script src="{% static 'js/theme.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        delay: 500
+      });
+    </script>
   </body>
 
 </html>
