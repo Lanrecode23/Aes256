@@ -7,8 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kalam:wght@300&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@100;400&family=Roboto&display=swap');
 
 .dancing{
-    font-family: "roboto", sans-serif !important;
-    font-size: 20px !important;
+    font-family: "Roboto", sans-serif !important;
 }
 .enlogo{
     font-family: "Barlow Condensed", sans-serif;
